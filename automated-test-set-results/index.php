@@ -3,7 +3,6 @@
 require 'config.php';
 /** @var $config */
 
-var_dump($config);die;
 $time = $config['time'];
 $testSetId = $config['test_set_id'];
 
