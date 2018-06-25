@@ -3,6 +3,7 @@
 require 'config.php';
 /** @var $config */
 
+var_dump($config);die;
 $time = $config['time'];
 $testSetId = $config['test_set_id'];
 
@@ -128,7 +129,7 @@ foreach ($allTestCases as $testCase) {
     }
     $data = array(
         'TestCaseResult' => array(
-            'Build' => '#133 from master',
+            'Build' => $config['Build'],
             'Date' => $time,
             'TestCase' => array(
                 '_ref' => $urlForTestCase
@@ -136,8 +137,8 @@ foreach ($allTestCases as $testCase) {
             'TestSet' => array(
                 '_ref' => $baseUrlForTestSet
             ),
-            'Notes' => 'Testing Environment: Chrome',
-            'Verdict' => 'Pass'
+            'Notes' => $config['Notes'],
+            'Verdict' => $config['Verdict']
 
         )
     );
